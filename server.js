@@ -46,11 +46,42 @@ app.get('/scrape', (req, res) => {
 
 app.get('/load', (req, res) => {
   db.Article.find({}).then( dbArticle => {
-    res.render('index', dbArticle)
+    console.log(dbArticle)
+    const data = {
+      data: dbArticle
+    }
+    res.render('index', data)
   }).catch(err => {
     res.json(err)
   })
 })
+
+app.post('/note/:id', (req, res) => {
+  db.Note.create(req.body).then(dbNote => {
+    return db.Article.findOneAndUpdate({_id: req.params.id}, {note: dbNote._id}, {new: true})
+  })
+  .then(dbArticle => {  
+    const data = {
+      data: dbArticle
+    }
+    res.render('index', data)
+  }).catch(err => {
+    res.json(err)
+  })
+})
+
+app.get("/articles/:id", function(req, res) {
+  db.Article.findOne({ _id: req.params.id })
+    .populate("note").then(function(dbArticle) {
+      const data = {
+        data: dbArticle
+      }
+      res.render('index', data)
+    })
+    .catch(function(err) {
+      res.json(err);
+    });
+});
 
 app.get('/', (req, res) => {
   res.render('index')
