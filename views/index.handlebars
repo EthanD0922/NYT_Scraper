@@ -1,3 +1,32 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <button class="saved btn btn-warning">Saved</button>
+      </li>
+      <li class="nav-item">
+        <button class="scrape btn btn-warning ml-2">Scrape</button>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">NYT Scraper</h1>
+    <p class="lead">Scrape an Article Below</p>
+  </div>
+</div>
+
+
+
 <div>
     {{#each data}}
         <div class= "card">
@@ -7,7 +36,14 @@
             <div class="card-body">
                 <div class="card-text">{{this.summary}}</div>
                 <a href = "{{this.link}}" class="btn btn-primary">Go To Page</a>
+                <a href = "/save" class= "btn btn-success">Save Article</a>
             </div>
         </div>
     {{/each}}
 </div>
+
+<footer class="footer">
+  <div class="container">
+    <p>New York Times Mongo Scraper</p>
+  </div>
+</footer>
