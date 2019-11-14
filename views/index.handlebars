@@ -8,11 +8,11 @@
       <li class="nav-item active">
         <a class="nav-link" href="/">Home</a>
       </li>
-      <li class="nav-item">
+      {{!-- <li class="nav-item">
         <button class="saved btn btn-warning">Saved</button>
-      </li>
+      </li> --}}
       <li class="nav-item">
-        <button class="scrape btn btn-warning ml-2">Scrape</button>
+        <a class="scrape btn btn-warning ml-2" href='/load'>Scrape</a>
       </li>
     </ul>
   </div>
@@ -20,7 +20,7 @@
 
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-4">NYT Scraper</h1>
+    <h1 class="display-4">NYT Scraper</h1>  
     <p class="lead">Scrape an Article Below</p>
   </div>
 </div>
@@ -68,7 +68,7 @@
         </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" data-id="{{this._id}}" data-title="{{this.title}}" class="btn btn-primary saveNote">Save changes</button>
+        <button type="button" data-id="{{this._id}}" data-title="{{this.title}}" class="btn btn-primary saveNote"id="saveNote">Save changes</button>
       </div>
     </div>
   </div>

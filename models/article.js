@@ -16,7 +16,7 @@ var ArticleSchema = new Schema({
     required: true
   },
   note: {
-    type: Schema.Types.ObjectId,
+    type: mongoose.Types.ObjectId,
     ref: "note"
   }
 });
