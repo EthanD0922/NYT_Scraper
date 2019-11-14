@@ -5,7 +5,8 @@ $(".btn").click(function() {
 $(document).ready( () => {
     $(".notePrimary").click(() => {
         var thisId = $(this).attr('data-id');
-        console.log("notes clicked" + thisId )
+        console.log("notes clicked")
+        console.log($('.notePrimary'))
         $.ajax({
             method: "GET",
             url: '/articles/' + thisId
