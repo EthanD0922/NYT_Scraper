@@ -76,7 +76,7 @@ app.get("/articles/:id", function(req, res) {
       const data = {
         data: dbArticle
       }
-      res.render('index', data)
+      res.json(data)
     })
     .catch(function(err) {
       res.json(err);
